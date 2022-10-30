@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="sonnet" type="sonnetType"/>
+
+  <xs:complexType name="authorType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="lastName"/>
+      <xs:element type="xs:string" name="firstName"/>
+      <xs:element type="xs:string" name="nationality"/>
+      <xs:element type="xs:string" name="yearOfBirth"/>
+      <xs:element type="xs:string" name="yearOfDeath"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="linesType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="line" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sonnetType">
+    <xs:sequence>
+      <xs:element type="authorType" name="author"/>
+      <xs:element type="linesType" name="lines"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="sonnet">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lastName" type="xs:string"/>
+                            <xs:element name="firstName" type="xs:string"/>
+                            <xs:element name="nationality" type="xs:string"/>
+                            <xs:element name="yearOfBirth" type="xs:string"/>
+                            <xs:element name="yearOfDeath" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lines">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="line" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="type" type="xs:string"/>
+</xs:schema>
